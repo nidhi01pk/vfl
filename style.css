@@ -1,0 +1,403 @@
+/* Universal Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* A modern, clean sans-serif font */
+  background: linear-gradient(135deg, #ccffdd, #99ffbb); /* Light green gradient for background */
+  color: #333; /* Dark gray for primary text */
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Header & Navigation */
+header {
+  background: #33ff77; /* Vibrant green */
+  color: #333; /* Darker text for contrast on light green header */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Sticky header on scroll */
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #004d1a; /* Darker green for logo text */
+}
+
+nav a {
+  color: #004d1a; /* Darker green for nav links */
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+nav a.active,
+nav a:hover {
+  color: #000;
+  background: rgba(255, 255, 255, 0.3); /* Glassy translucent white */
+  backdrop-filter: blur(8px); /* Frosted glass blur effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft glow */
+  transform: translateY(-2px);
+}
+
+/* Hero Section (Homepage specific) */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Takes most of the viewport height */
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(rgba(51,255,119,0.1), rgba(51,255,119,0.1)), url('https://source.unsplash.com/1600x900/?indian,nature,green') no-repeat center center/cover; 
+  color: white; /* White text on hero for contrast */
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background for text */
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #66ff99; /* Lighter green for headings */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+/* Generic Page Content Wrapper */
+.page {
+  max-width: 1000px;
+  background: #fff;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+.page h1 {
+  text-align: center;
+  color: #00b33c;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.page h2 {
+  color: #00b33c;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.page p {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #33ff77;
+  color: #004d1a;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #00b33c;
+  color: white;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.small-btn {
+  display: inline-block;
+  background: #66ff99;
+  color: #004d1a;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.small-btn:hover {
+  background: #33ff77;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+/* Grid for Cards (e.g., Businesses, Features) */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #f0fff0;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  filter: saturate(1.1);
+}
+
+.card h3 {
+  color: #007f2c;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* List Styling (e.g., How to Help, About Goals) */
+.help-list {
+  list-style: none;
+  font-size: 1.1rem;
+  margin-top: 25px;
+  padding-left: 0;
+}
+
+.help-list li {
+  background: #e6ffe6;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-left: 8px solid #33ff77;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.help-list li:hover {
+  background: #d9ffd9;
+}
+
+.help-list li strong {
+  color: #00b33c;
+  min-width: 260px;
+  display: inline-block;
+}
+
+/* Forms (Contact Page) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #33ff77;
+  box-shadow: 0 0 8px rgba(51, 255, 119, 0.3);
+  outline: none;
+}
+
+form button[type="submit"] {
+  padding: 12px 25px;
+  background: #33ff77;
+  color: #004d1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="submit"]:hover {
+  background: #00b33c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-link {
+  color: #00b33c;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+.social-link:hover {
+  color: #007f2c;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #33ff77;
+  color: #004d1a;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.95rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Utilities */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .page {
+    margin: 30px auto;
+    padding: 30px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px;
+  }
+  nav {
+    margin-top: 15px;
+  }
+  nav a {
+    margin: 0 8px;
+  }
+  .hero-content {
+    padding: 30px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .page h1 {
+    font-size: 2rem;
+  }
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .help-list li {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 5px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .page h1 {
+    font-size: 1.8rem;
+  }
+  .page p, .help-list li {
+    font-size: 0.95rem;
+  }
+  form input, form textarea, form button {
+    font-size: 0.95rem;
+  }
+}
